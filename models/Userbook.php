@@ -108,7 +108,12 @@ class Userbook extends \yii\db\ActiveRecord
 
         return $dataProvider;
 
+    }
 
+
+    public function getBookUsers($id, $get){
+
+        return Userbook::find()->where(['user_id'=>$id, 'get'=>$get])->all();
 
     }
 }

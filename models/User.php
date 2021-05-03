@@ -110,6 +110,14 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     }
 
+       /* public function updateUser($post, $user){
+
+            $user->name = $post->name;
+            $user->surname = $post->surname;
+            $user->password = $post->password;
+
+        }*/
+
 
 
 
