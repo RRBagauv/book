@@ -1,9 +1,6 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\UserbookSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $search*/
 
 ?>
 

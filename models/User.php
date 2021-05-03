@@ -110,6 +110,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     }
 
+    public function redirect(){
+
+        $this->redirect(['book/book-page']);
+
+    }
        /* public function updateUser($post, $user){
 
             $user->name = $post->name;
