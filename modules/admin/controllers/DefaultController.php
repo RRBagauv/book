@@ -15,6 +15,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        $this->redirect('/admin/book');
         return $this->render('index');
     }
 }

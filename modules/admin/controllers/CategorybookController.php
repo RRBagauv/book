@@ -90,14 +90,19 @@ class CategorybookController extends Controller
      */
     public function actionUpdate($id)
     {
+
         $model = $this->findModel($id);
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
+        $categories = ArrayHelper::map(Category::find()->all(), 'id', 'name');
+        $books = ArrayHelper::map(Book::find()->all(), 'id', 'name');
         return $this->render('update', [
             'model' => $model,
+            'categories'=> $categories,
+            'books'=>$books,
         ]);
     }
 

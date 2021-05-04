@@ -39,20 +39,22 @@
                         <?php endif;?>
                     <?php endforeach?>
                 <?php endif;?>
-                <li class="nav-item">
-                    <?=
+                <?=
                     Yii::$app->user->isGuest ? (
-                    Html::a('Login','/web/login/login',['class'=>'nav-link'])
-                    ) : (
-                        '<li>'
-                        . Html::beginForm(['/login/logout'], 'post')
-                        . Html::submitButton(
-                            'Logout (' . Yii::$app->user->identity->login . ')',
-                            ['class' => 'btn btn-link logout']
-                        )
-                        . Html::endForm()
-                        . '</li>' )?>
-                </li>
+                '<li class="nav-item">'. Html::a('Войти','/web/login/login',['class'=>'nav-link']) .'</li>'
+                    ):'<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Профиль</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/web/user/account?id='.Yii::$app->user->identity->id.'">Личный кабинет</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/web/login/logout">Выйти</a>
+                                    <div class="dropdown-divider"></div>
+                
+                                 </div>
+                        </li>';
+
+                   ?>
+
             </ul>
         </div>
         </div>

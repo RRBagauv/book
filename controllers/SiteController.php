@@ -61,6 +61,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->redirect('/book/book-page');
         return $this->render('index');
     }
 

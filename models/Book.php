@@ -39,7 +39,7 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['name', 'description', 'count'], 'required'],
             [['description'], 'string'],
-            [['count', 'user_id', 'category_id'], 'integer'],
+            [['count'], 'integer'],
             [['name'], 'string', 'max' => 255],
             [['img'], 'file', 'extensions'=>'jpg, jpeg, png'],
         ];

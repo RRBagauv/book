@@ -17,13 +17,16 @@ $this->params['breadcrumbs'][] = $this->title;
 <h1><?= Html::encode($this->title) ?></h1>
 
 <div class="container">
-    <?php if(isset($allBooks)):?>
-        <?php foreach ($allBooks as $k):?>
+
             <section class="text-center mb-4">
                 <div class="row wow fadeIn">
+                    <?php if(isset($allBooks)):?>
+                        <?php foreach ($allBooks as $k):?>
                     <div class="col-lg-3 col-md-6 mb-4">
+
                         <div class="card">
                             <div class="view overlay">
+
                                 <img class="card-img-top" src="<?=\Yii::getAlias('@web') .'/userfile/'.$k->img?>" alt="image">
                                 <a href="description<?='?id='.$k->id?>">
                                     <div class="mask rgba-while-slight"></div>
@@ -37,11 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </h5>
                             </div>
                         </div>
+
                     </div>
+                    <?php endforeach;?>
+                    <?php else:?>
                 </div>
             </section>
-        <?php endforeach;?>
-    <?php else:?>
+
         <h1>В данной категории книг пока нет....</h1>
     <?php endif;?>
 

@@ -181,3 +181,25 @@ a.desc:after {
     height: 10%;
 
 }
+
+.view .overlay{
+
+    width: 300px;
+    height: 300px;
+    text-align: center;
+
+}
+
+.card-img-top{
+
+    object-fit: cover;
+    height: 250px;
+    position: center;
+}
+
+
+.row .profile{
+
+    margin-top: 15px;
+
+}

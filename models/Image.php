@@ -17,6 +17,10 @@ class Image extends Model
 
             $model->img = $this->UploadImage($file, $image);
 
+        }elseif($image != false){
+
+            $model->img= 'default.jpg';
+
         }
         return $model->img;
 
@@ -36,6 +40,7 @@ class Image extends Model
             $this->saveNewImage($fileName, $file);
 
         }
+
         return $fileName;
 
     }
