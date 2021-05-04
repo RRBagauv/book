@@ -25,11 +25,10 @@ class BookController extends Controller
     }
 
     public function actionCategoryBook($id){
-
         $category = Category::findOne($id);
-        $categoryBooks = Categorybook::findAll(['category_id' => $id]);
-        $allBooks = $categoryBooks->books;
-        return $this->render('bookpage', compact('allBooks', '$category'));
+        $categoryBooks = Categorybook::find()->where(['category_id' => $id])->all();
+
+        return $this->render('categorybook', compact('allBooks', 'categoryBooks', 'category'));
 
     }
 
