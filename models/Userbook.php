@@ -75,7 +75,7 @@ class Userbook extends \yii\db\ActiveRecord
 
     public function getUserBook($array){
 
-        $book = Userbook::find()->where(['user_id'=>$array['user_id'], 'book_id'=>$array['book_id']])->one();
+        $book = Userbook::find()->where(['user_id'=>$array['user_id'], 'book_id'=>$array['book_id'], 'get'=>$get])->one();
         if($book->id){
 
             $book->get = $array['get'];
